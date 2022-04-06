@@ -11,8 +11,10 @@ namespace RFI.WordsTrainer.Data.Models
         [MaxLength(50)]
         public string? Name { get; set; }
 
+        [Required]
         public DateTime? Created { get; set; }
 
+        [Required]
         public DateTime? Updated { get; set; }
     }
 }
