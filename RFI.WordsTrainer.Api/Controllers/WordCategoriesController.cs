@@ -6,12 +6,12 @@ namespace RFI.WordsTrainer.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WordsController : ControllerBase
+    public class WordCategoriesController : ControllerBase
     {
-        private readonly ILogger<WordsController> _logger;
+        private readonly ILogger<WordCategoriesController> _logger;
         private readonly IMapper _mapper;
 
-        public WordsController(ILogger<WordsController> logger, IMapper mapper)
+        public WordCategoriesController(ILogger<WordCategoriesController> logger, IMapper mapper)
         {
             _logger = logger;
             _mapper = mapper;
