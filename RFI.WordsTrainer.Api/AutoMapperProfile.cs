@@ -7,6 +7,7 @@ namespace RFI.WordsTrainer.Api
         public AutoMapperProfile()
         {
             CreateMap<Data.Models.WordCategory, Models.WordCategory>();
+            CreateMap<Data.Models.Word, Models.Word>();
         }
     }
 }

@@ -2,19 +2,10 @@
 
 namespace RFI.WordsTrainer.Data.Models
 {
-    public class WordCategory
+    public class WordCategory : DbEntityBase
     {
-        [Key]
-        public int? Id { get; set; }
-
         [Required]
         [MaxLength(50)]
         public string? Name { get; set; }
-
-        [Required]
-        public DateTime? Created { get; set; }
-
-        [Required]
-        public DateTime? Updated { get; set; }
     }
 }
