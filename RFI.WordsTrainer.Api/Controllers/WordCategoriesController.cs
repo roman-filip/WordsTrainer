@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using RFI.WordsTrainer.Api.Models;
+using RFI.WordsTrainer.Data;
 
 namespace RFI.WordsTrainer.Api.Controllers
 {
@@ -10,22 +11,17 @@ namespace RFI.WordsTrainer.Api.Controllers
     {
         private readonly ILogger<WordCategoriesController> _logger;
         private readonly IMapper _mapper;
+        private readonly WordsTrainerDbContext _dbContext;
 
-        public WordCategoriesController(ILogger<WordCategoriesController> logger, IMapper mapper)
+        public WordCategoriesController(ILogger<WordCategoriesController> logger, IMapper mapper, WordsTrainerDbContext dbContext)
         {
             _logger = logger;
             _mapper = mapper;
+            _dbContext = dbContext;
         }
 
         [HttpGet]
         public IEnumerable<WordCategory> Get()
-        {
-            return _mapper.Map<IEnumerable<WordCategory>>(Enumerable.Range(1, 4).Select(index => new Data.Models.WordCategory
-            {
-                Id = index,
-                Name = $"Testovaci kategorie - {index}"
-            })
-            .ToArray());
-        }
+            => _mapper.Map<IEnumerable<WordCategory>>(_dbContext.WordCategories.ToList());
     }
 }

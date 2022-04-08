@@ -1,5 +1,5 @@
+using Microsoft.EntityFrameworkCore;
 using RFI.WordsTrainer.Data;
-using RFI.WordsTrainer.Data.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddWordsTrainerData();
+builder.Services.AddDbContext<WordsTrainerDbContext>(opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("WordsTrainerPGDB")));
 
 var app = builder.Build();
 
