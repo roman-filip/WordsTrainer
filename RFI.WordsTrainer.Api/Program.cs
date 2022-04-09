@@ -12,7 +12,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddDbContext<WordsTrainerDbContext>(opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("WordsTrainerPGDB")));
+builder.Services.AddDbContext<WordsTrainerDbContext>(
+    opt => opt.UseNpgsql(
+        builder.Configuration.GetConnectionString("WordsTrainerPGDB"),
+        npgsqlOpt => npgsqlOpt.MigrationsAssembly("RFI.WordsTrainer.Data")));
 
 var app = builder.Build();
 
