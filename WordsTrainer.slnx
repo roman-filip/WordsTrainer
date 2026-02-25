@@ -1,0 +1,19 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/RFI.WordsTrainer.Application/RFI.WordsTrainer.Application.csproj" Id="423138a9-df9a-4d6f-bcf1-0aedf4258c94" />
+    <Project Path="src/RFI.WordsTrainer.Domain/RFI.WordsTrainer.Domain.csproj" Id="6d57831b-1245-4bca-a488-35b33e2a5f54" />
+    <Project Path="src/RFI.WordsTrainer.Infrastructure/RFI.WordsTrainer.Infrastructure.csproj" Id="0571e859-2247-4756-82ce-279626afa7bb" />
+    <Project Path="src/RFI.WordsTrainer.Web/RFI.WordsTrainer.Web.csproj" />
+  </Folder>
+  <Folder Name="/src/_aspire/">
+    <Project Path="src/RFI.WordsTrainer.AppHost/RFI.WordsTrainer.AppHost.csproj" Id="a0a28c9c-122d-4b83-8e5b-d33efbdddbbc" />
+    <Project Path="src/RFI.WordsTrainer.ServiceDefaults/RFI.WordsTrainer.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+</Solution>
