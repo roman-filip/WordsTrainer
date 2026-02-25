@@ -1,0 +1,6 @@
+@HostAddress = https://localhost:7164
+
+### Get all word translations
+GET {{HostAddress}}/words
+
+###

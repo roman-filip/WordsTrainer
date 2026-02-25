@@ -15,8 +15,4 @@
     <ProjectReference Include="..\RFI.WordsTrainer.ServiceDefaults\RFI.WordsTrainer.ServiceDefaults.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Http\" />
-  </ItemGroup>
-
 </Project>
