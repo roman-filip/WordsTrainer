@@ -1,3 +1,6 @@
+using RFI.WordsTrainer.Infrastructure;
+using RFI.WordsTrainer.Infrastructure.Data.EF;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
@@ -8,6 +11,8 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+builder.AddInfrastructureServices();
+
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
@@ -16,6 +21,7 @@ app.MapDefaultEndpoints();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    await app.InitialiseDatabaseAsync();
 }
 
 app.UseHttpsRedirection();
