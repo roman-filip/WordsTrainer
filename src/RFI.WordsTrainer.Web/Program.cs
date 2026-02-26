@@ -29,6 +29,7 @@ app.MapDefaultEndpoints(); // Aspire health checks and metrics
 app.Run();
 
 
-// TODO - Add Swagger
+// TODO - Add Swagger (into method AddServiceDefaults)
+// TODO - Add Swagger documentation to controller
 // TODO - add problemdetails
 // TODO - add global error handling

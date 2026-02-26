@@ -3,4 +3,10 @@
 ### Get all word translations
 GET {{HostAddress}}/words
 
+### Get one word translation
+GET {{HostAddress}}/words/00000000-0000-0000-0000-000000000000
+
+### Get random word translation
+GET {{HostAddress}}/words/random
+
 ###

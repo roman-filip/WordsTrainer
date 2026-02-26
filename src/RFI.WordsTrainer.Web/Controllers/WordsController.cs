@@ -7,13 +7,29 @@ namespace RFI.WordsTrainer.Web.Controllers;
 public class WordsController : ControllerBase
 {
     [HttpGet]
-    public IEnumerable<WordTranslation> Get()
+    public ActionResult<IEnumerable<WordTranslation>> Get()
     {
-        return Enumerable.Range(1, 5).Select(index =>
+        return Ok(Enumerable.Range(1, 5).Select(index =>
             WordTranslation.Create(
                 Word.Create($"Word {index}", Language.Cs),
                 Word.Create($"Translation {index}", Language.En)
             )
-        ).ToArray();
+        ).ToArray());
+    }
+
+    [HttpGet("{id:guid}")]
+    public ActionResult<WordTranslation> Get(Guid id)
+    {
+        return Ok(WordTranslation.Create(
+                Word.Create($"Word", Language.Cs),
+                Word.Create($"Translation", Language.En)));
+    }
+
+    [HttpGet("random")]
+    public ActionResult<WordTranslation> GetRandom()
+    {
+        return Ok(WordTranslation.Create(
+                Word.Create($"Word", Language.Cs),
+                Word.Create($"Translation", Language.En)));
     }
 }
