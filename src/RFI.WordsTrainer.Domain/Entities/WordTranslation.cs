@@ -8,6 +8,13 @@ public class WordTranslation
 
     public Word Word2 { get; private set; }
 
+    private WordTranslation()
+    {
+        Id = Guid.Empty;
+        Word1 = null!;
+        Word2 = null!;
+    }
+
     private WordTranslation(Guid id, Word word1, Word word2)
     {
         Id = id;
@@ -16,5 +23,5 @@ public class WordTranslation
     }
 
     public static WordTranslation Create(Word word1, Word word2)
-        => new WordTranslation(Guid.NewGuid(), word1, word2);
+        => new(Guid.NewGuid(), word1, word2);
 }
