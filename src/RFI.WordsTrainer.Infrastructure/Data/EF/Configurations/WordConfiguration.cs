@@ -12,7 +12,9 @@ internal class WordConfiguration : IEntityTypeConfiguration<Word>
             .IsRequired()
             .HasMaxLength(500);
 
-        builder.Property(w => w.Language)
-            .IsRequired();
+        builder.HasOne<Language>(w => w.Language)
+            .WithMany()
+            .IsRequired()
+            .OnDelete(DeleteBehavior.NoAction);
     }
 }

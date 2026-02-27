@@ -10,10 +10,12 @@ internal class WordTranslationConfiguration : IEntityTypeConfiguration<WordTrans
     {
         builder.HasOne<Word>(wt => wt.Word1)
             .WithMany()
+            .IsRequired()
             .OnDelete(DeleteBehavior.NoAction);
 
         builder.HasOne<Word>(wt => wt.Word2)
             .WithMany()
+            .IsRequired()
             .OnDelete(DeleteBehavior.NoAction);
 
         builder.HasOne<WordTranslationCategory>(wtc => wtc.Category)

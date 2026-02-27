@@ -8,6 +8,12 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
 {
     public DbSet<Word> Words => Set<Word>();
 
+    public DbSet<WordTranslation> WordTranslations => Set<WordTranslation>();
+
+    public DbSet<WordTranslationCategory> WordTranslationCategories => Set<WordTranslationCategory>();
+
+    public DbSet<Language> Languages => Set<Language>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

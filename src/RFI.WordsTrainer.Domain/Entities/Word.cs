@@ -1,5 +1,4 @@
-﻿using RFI.WordsTrainer.Domain.Enums;
-using RFI.WordsTrainer.Domain.Interfaces;
+﻿using RFI.WordsTrainer.Domain.Interfaces;
 
 namespace RFI.WordsTrainer.Domain.Entities;
 
@@ -11,6 +10,13 @@ public class Word : IEntity
 
     public Language Language { get; private set; }
 
+    private Word()
+    {
+        Id = Guid.Empty;
+        Text = null!;
+        Language = null!;
+    }
+
     private Word(Guid id, string text, Language language)
     {
         Id = id;
@@ -19,5 +25,5 @@ public class Word : IEntity
     }
 
     public static Word Create(string text, Language language)
-        => new Word(Guid.NewGuid(), text, language);
+        => new(Guid.NewGuid(), text, language);
 }
