@@ -8,6 +8,8 @@ public class WordTranslation
 
     public Word Word2 { get; private set; }
 
+    public WordTranslationCategory? Category { get; private set; }
+
     private WordTranslation()
     {
         Id = Guid.Empty;

@@ -15,5 +15,9 @@ internal class WordTranslationConfiguration : IEntityTypeConfiguration<WordTrans
         builder.HasOne<Word>(wt => wt.Word2)
             .WithMany()
             .OnDelete(DeleteBehavior.NoAction);
+
+        builder.HasOne<WordTranslationCategory>(wtc => wtc.Category)
+            .WithMany()
+            .OnDelete(DeleteBehavior.NoAction);
     }
 }

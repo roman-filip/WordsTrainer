@@ -10,7 +10,7 @@ internal class WordConfiguration : IEntityTypeConfiguration<Word>
     {
         builder.Property(w => w.Text)
             .IsRequired()
-            .HasMaxLength(200);
+            .HasMaxLength(500);
 
         builder.Property(w => w.Language)
             .IsRequired();
